@@ -19,17 +19,19 @@ export default function PasswordInput({ className, ...props }: Props) {
         type={show ? 'text' : 'password'}
         className={classNames(textInputClassName, className)}
       />
-      <Eye show={show} onClick={() => setShow(c => !c)} />
+      <div className="absolute inset-y-3 right-5 select-none" onClick={() => setShow(c => !c)}>
+        <Eye show={show} />
+      </div>
     </div>
   );
 }
 
-function Eye({ show, onClick }: { show: boolean, onClick?: VoidFunction }) {
-  const iconClassName = classNames('absolute inset-y-3 right-5 h-5 w-5')
+function Eye({ show }: { show: boolean }) {
+  const iconClassName = classNames('h-5 w-5')
 
   if (!show) {
-    return <EyeIcon className={iconClassName} onClick={onClick} />;
+    return <EyeIcon className={iconClassName} />;
   }
   
-  return <EyeSlashIcon className={iconClassName} onClick={onClick} />
+  return <EyeSlashIcon className={iconClassName} />
 }

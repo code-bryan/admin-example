@@ -6,5 +6,7 @@ export default {
     'password-placeholder': 'At least 8 characters',
     'forgot-button': 'Forgot password?',
     'login-button': 'Login',
+    'sign-up-description': "Don't have an account?",
+    'sign-up-button': 'Sign Up',
   }
 };

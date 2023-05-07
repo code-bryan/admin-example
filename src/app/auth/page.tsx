@@ -1,8 +1,12 @@
 import BaseButton from "@/components/atoms/base-button";
+import BaseDivider from "@/components/atoms/base-divider";
 import BaseText from "@/components/atoms/base-text";
-import Form from "@/components/molecules/form";
 import AuthTemplate from "@/components/templates/auth-template";
 import { translate } from "@/translate";
+import Link from "next/link";
+import { FcGoogle } from "react-icons/fc";
+import { BsFacebook } from "react-icons/bs";
+import LoginForm from "@/components/organisms/login-form";
 
 export default async function Login() {
   return (
@@ -14,12 +18,20 @@ export default async function Login() {
         <BaseText.BodyOne text={translate('auth.description')} className="text-gray-400" />
       </div>
 
-      <div className="flex flex-col gap-4">
-        <Form.TextInput className="w-full" placeholder="your@example.com" />
-        <Form.PasswordInput className="w-full" placeholder={translate('auth.password-placeholder')} />
-        <BaseText.BodyOne text={translate('auth.forgot-button')} className="text-gray-500 self-end" />
+      <LoginForm />
 
-        <BaseButton text={translate('auth.login-button')} />
+      <BaseDivider text="or" />
+
+      <div className="flex gap-3">
+        <BaseButton Icon={<FcGoogle size={20} />} variant="outline" text="Google" />
+        <BaseButton Icon={<BsFacebook size={20} />} variant="outline" text="Facebook" />
+      </div>
+
+      <div className="flex flex-row gap-2 justify-center">
+        <BaseText.BodyOne text={translate('auth.sign-up-description')} className="text-gray-400" />
+        <Link href='/auth/register'>
+          <BaseText.BodyOne text={translate('auth.sign-up-button')} className="text-gray-500" />
+        </Link>
       </div>
     </AuthTemplate>
   );
