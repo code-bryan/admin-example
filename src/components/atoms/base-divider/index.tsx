@@ -1,5 +1,5 @@
 type Props = {
-  text: string;
+  text?: string;
 }
 
 export default function BaseDivider({ text }: Props) {

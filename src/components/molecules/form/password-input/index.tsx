@@ -11,7 +11,7 @@ interface Props extends Omit<InputProps, 'type'> {
 
 export default function PasswordInput({ className, ...props }: Props) {
   const [show, setShow] = useState(false);
-  
+
   return (
     <div className="relative">
       <input
@@ -19,9 +19,9 @@ export default function PasswordInput({ className, ...props }: Props) {
         type={show ? 'text' : 'password'}
         className={classNames(textInputClassName, className)}
       />
-      <div className="absolute inset-y-3 right-5 select-none" onClick={() => setShow(c => !c)}>
+      <span className="absolute inset-y-3 right-5 select-none" onClick={() => setShow(c => !c)}>
         <Eye show={show} />
-      </div>
+      </span>
     </div>
   );
 }

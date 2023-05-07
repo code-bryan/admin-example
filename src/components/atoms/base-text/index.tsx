@@ -1,5 +1,5 @@
 /* eslint-disable import/no-anonymous-default-export */
-import BodyOne from "./body";
+import { BodyOne, BodyTwo } from "./body";
 import HeadingOne from "./heading";
 
 export type BaseTextProps = {
@@ -10,4 +10,5 @@ export type BaseTextProps = {
 export default {
   HeadingOne,
   BodyOne,
+  BodyTwo,
 };
